@@ -12,3 +12,4 @@ Route::delete('/user/{id}', [userController::class, 'destroy']);
 Route::put('/user/{id}', [userController::class, 'update']);
 
 Route::get('/input-hours', [inputHoursController::class, 'index']);
+Route::post('/user/hours/{userId}', [inputHoursController::class, 'storage']);

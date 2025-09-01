@@ -14,7 +14,9 @@ return new class extends Migration
         Schema::create('input_hours', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->integer('hours_a_day');
+            $table->time('start_time');
+            $table->time('end_time');
+            $table->decimal('hours_a_day');
             $table->integer('rest_time')->nullable();
             $table->date('day');
             $table->timestamps();

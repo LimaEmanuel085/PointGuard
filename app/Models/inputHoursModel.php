@@ -10,8 +10,15 @@ class inputHoursModel extends Model
 
     protected $fillable = [
         'user_id',
+        'start_time',
+        'end_time',
         'hours_a_day',
         'rest_time',
         'day',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
 }
